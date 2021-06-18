@@ -195,6 +195,12 @@
 			return $result;
 
 		}
+		public function getBrand()
+		{
+			$query = "SELECT brandName FROM tbl_thuonghieu";
+				$result = $this->db->select($query);
+				return $result;
+		}
 		public function getDell()
 		{
 			$query = "SELECT * FROM tbl_sanpham where brandId ='8' and type ='1'";

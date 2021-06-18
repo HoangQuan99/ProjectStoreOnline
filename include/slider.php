@@ -7,7 +7,6 @@
 					if($getDell)
 					{
 						while ($resultdell=$getDell->fetch_assoc()) {
-
 				?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
@@ -23,7 +22,6 @@
 			   		}	 
 			   	}
 			   ?>		
-	<!-- <-------------------> 
 			   <?php
 					$getIP = $pd->getIP();
 					if($getIP)
@@ -68,7 +66,6 @@
 			   		}	 
 			   	}
 			   ?>		
-		 <!-- <------------------->
 		 		<?php
 					$getXM = $pd->getXM();
 					if($getXM)

@@ -39,7 +39,6 @@
 					<form action="" method="post">
 						<input type="number" class="buyfield" name="soluong" value="1" min="1" />
 						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
-						
 					</form>		
 						<?php
 						if(isset($addtocart))
@@ -47,6 +46,13 @@
 							echo '<span style="color:red;font-size:18px">Sản Phẩm Đã Tồn Tại Trong Giỏ Hàng!!!</span>';
 						}
 					 ?>	
+				</div>
+				<div class="add-cart">
+					<form action="" method="post">
+						<!-- <input type="number" class="buyfield" name="soluong" value="1" min="1" /> -->
+						<input type="hidden" class="buysubmit" name="productid" value="<?php echo $result['productId'] ?>"/>
+						<input type="submit" class="buysubmit" name="compare" value="Compare Product"/>
+					</form>		
 				</div>
 			</div>
 			<div class="product-desc">
@@ -64,9 +70,7 @@
 						$get_cat_fontend = $cat->get_cat_fontend();
 						{
 							if($get_cat_fontend)
-								while($result_cat = $get_cat_fontend->fetch_assoc()){
-
-								
+								while($result_cat = $get_cat_fontend->fetch_assoc()){		
 					 ?>
 					<ul>
 				      <li><a href="productbycat.php?catid=<?php  echo $result_cat['catId'] ?>"><?php echo $result_cat['catName'] ?></a></li> 
@@ -75,7 +79,6 @@
     				 }
 						}
     				?>
-    	
  				</div>
  		</div>
  	</div>

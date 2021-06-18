@@ -1,7 +1,6 @@
 
 <?php
  include 'include/header.php';
- include 'include/slider.php';
 ?>
  <div class="main">
     <div class="content">

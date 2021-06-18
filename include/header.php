@@ -10,7 +10,7 @@
 	spl_autoload_register(function($className){
 		include_once "classes/" .$className.".php";
 	});
-	
+	$br = new brand();
 	$db = new database();
 	$fm = new Format();
 	$ct= new cart();
@@ -108,9 +108,43 @@
  </div>
 <div class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
-	  <li><a href="index.php">Home</a></li>
-	  <li><a href="products.php">Products</a> </li>
-	  <li><a href="topbrands.php">Top Brands</a></li>
+	  <li><a href="index.php">Trang chủ</a></li>
+	  <li class="dropdown">
+	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	        	Danh mục sản phẩm
+	        <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<?php
+	        	$danhmuc = $cat->show_danhmuc();
+	        	if($danhmuc){
+	      			while($result_new = $danhmuc->fetch_assoc()){
+
+	      	?>
+			<li><a href="productbycat.php?catid=<?php  echo $result_new['catId'] ?>"><?php echo $result_new['catName'] ?></a></li> 
+			<?php
+	          	}
+	          } 
+	          ?>			
+			</ul>
+	  </li>
+	  <li class="dropdown">
+	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	        	Thương hiệu
+	        <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<?php
+	        	$brand = $br->show_thuonghieu();
+	        	if($brand){
+	      			while($result_new = $brand->fetch_assoc()){
+
+	      	?>
+			<li><a><?php echo $result_new['brandName'] ?></a></li>
+			<?php
+	          	}
+	          } 
+	          ?>			
+			</ul>
+	  </li>
  		<?php
 				$check_cart = $ct->check_cart();
 				if($check_cart==FALSE)
