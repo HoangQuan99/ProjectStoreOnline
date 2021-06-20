@@ -101,5 +101,17 @@
 				$result = $this->db->select($query);
 				return $result;
 		}
+		public function get_name_bybrand1($id)
+		{
+			$query = "SELECT tbl_sanpham.*, tbl_thuonghieu.brandName, tbl_thuonghieu.brandId FROM tbl_thuonghieu, tbl_sanpham where tbl_sanpham.brandId =tbl_thuonghieu.brandId AND tbl_sanpham.brandId='$id' LIMIT 1";
+				$result = $this->db->select($query);
+				return $result;
+		}
+		public function get_name_bybrand($id)
+		{
+			$query = "SELECT tbl_sanpham.*, tbl_thuonghieu.brandName, tbl_thuonghieu.brandId FROM tbl_thuonghieu, tbl_sanpham where tbl_sanpham.brandId =tbl_thuonghieu.brandId AND tbl_sanpham.brandId='$id'";
+				$result = $this->db->select($query);
+				return $result;
+		}
 	}
 ?>

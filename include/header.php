@@ -138,7 +138,7 @@
 	      			while($result_new = $brand->fetch_assoc()){
 
 	      	?>
-			<li><a><?php echo $result_new['brandName'] ?></a></li>
+			<li><a href="productbybrand.php?brandid=<?php echo $result_new['brandId'] ?>"><?php echo $result_new['brandName'] ?></a></li>
 			<?php
 	          	}
 	          } 

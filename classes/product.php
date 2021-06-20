@@ -203,25 +203,25 @@
 		}
 		public function getDell()
 		{
-			$query = "SELECT * FROM tbl_sanpham where brandId ='8' and type ='1'";
+			$query = "SELECT * FROM tbl_sanpham where brandId ='8' and type ='1' LIMIT 1";
 				$result = $this->db->select($query);
 				return $result;
 		}
 		public function getIP()
 		{
-			$query = "SELECT * FROM tbl_sanpham where brandId ='6'and type ='1'";
+			$query = "SELECT * FROM tbl_sanpham where brandId ='6'and type ='1'LIMIT 1";
 				$result = $this->db->select($query);
 				return $result;
 		}
 		public function getSS()
 		{
-			$query = "SELECT * FROM tbl_sanpham where brandId ='5'and type ='1'";
+			$query = "SELECT * FROM tbl_sanpham where brandId ='5'and type ='1'LIMIT 1";
 				$result = $this->db->select($query);
 				return $result;
 		}
 		public function getXM()
 		{
-			$query = "SELECT * FROM tbl_sanpham where brandId ='7' and type ='1'";
+			$query = "SELECT * FROM tbl_sanpham where brandId ='7' and type ='1'LIMIT 1";
 				$result = $this->db->select($query);
 				return $result;
 		}
